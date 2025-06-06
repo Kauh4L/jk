@@ -1,0 +1,184 @@
+#include <allegro.h>
+#include <stdlib.h>
+#include <time.h>
+
+//fazer o botao fechar janela do windows funcionar
+volatile int exit_program = FALSE;
+void fechar_programa(){
+	exit_program = TRUE;
+}END_OF_FUNCITON(fechar_programa);
+
+//parte 1 tempo
+volatile int segundos = 0;
+void aumentasegundo(){
+	segundos++;
+}END_OF_FUNCTION(aumentasegundo);
+
+//struct do quadrado
+typedef struct{
+	int tamanho;
+	int velo;
+	int x, y, cor;
+	int ativo;
+}quadrado;
+
+//funcoes prototipo
+int atualizar_quadrado(quadrado *quadrado, BITMAP* buffer);
+
+int main(){
+	allegro_init();
+	install_timer();// padrao de 40hz
+	install_keyboard();
+	set_color_depth(16);
+	
+	set_window_title("Vida Universitária");
+	
+	if(set_gfx_mode(GFX_AUTODETECT, 800, 600, 0,0) != 0){
+		allegro_message("erro ao forma tela");
+	      if (set_gfx_mode(GFX_SAFE, 800, 600, 0, 0) != 0) {
+            allegro_message("Falha crítica: %s", allegro_error);
+            return 1;
+        }
+	}
+	
+	
+	
+	
+	//crie o tempo
+	LOCK_VARIABLE(segundos);
+	LOCK_FUNCTION(aumentasegundo);
+	install_int_ex(aumentasegundo, BPS_TO_TIMER(30)); 
+	//adicão da função fechar pela janela
+	LOCK_VARIABLE(exit_program);
+	LOCK_FUNCTION(fechar_program);
+	set_close_button_callback(fechar_programa);
+	
+	//utilize o tempo para igular o processamento de varias maquinas diferentes
+	
+	
+	//adicione as imagens e o buffer, bitmap
+	BITMAP *buffer = create_bitmap(800,600);
+	BITMAP *personagem = load_bitmap("img3.bmp",NULL);
+	
+	//verificar se imagem carregou
+	if(!buffer){
+        allegro_message("Erro ao criar buffer!");
+        return 1;
+    }
+	
+	if(!personagem){
+        allegro_message("Erro ao criar sprite!");
+        return 1;
+    }
+	
+	//VARIAVEIS
+	
+	//personagem variaveis posicao
+	int persx = 100;
+	int persy = 480;
+	
+	//personagem parte 2, imagens animadas
+	int current_frame = 0;
+	int total_frames = 4;
+	int frame_delay = 300;
+	int frame_count = 0;
+	
+	//variaveis para os objetos
+	quadrado unicoquadrado;
+	unicoquadrado.ativo = FALSE;
+	
+	
+	
+	
+	int coordenadasimg[4][4] = {
+			{0, 0, 21, 18}, //frames 1: x,y,largura,altura. largura é 21 - 0 = 21 , altura é 18 -  0 = 18
+			{27,2, 19, 15}, //frame 2: x = 27, y = 2, largura: 46-27(xf-xi) = 19, altura: 17-2(yf - yi) = 15
+			{55, 2, 20, 15}, //frame 3: x = 55, y = 2, largura: 75-55 = 20 ; altura: 17-2 = 15
+			{80, 2, 19, 15} //frame 4, voce tem que aprender a ver o pixel da imagem nos cantos da imagem assim voce consegue o x e y e a largura e altura subtraindo os pontos em x(xf - xi) e y(yf - yi) 
+	};
+	
+	//inicie a logica pro jogo
+	while(!exit_program){
+		frame_count++;
+		
+		//parar
+		if(key[KEY_ESC]){
+			fechar_programa();
+		}
+		
+		//cenario
+		clear_to_color(buffer, makecol(0,100,255));//SUBSTITUI O BUFFER EM UMA COR
+		rectfill(buffer, 0, 500, 800, 600, makecol(0,255,0));// se o retangulo comeca de x=0,y=400 e a posicao final de x e y é? xf=800 e yf=600, largura = 0 - 800= 800 , altura 800 - 400 = 400
+		circlefill(buffer, 100,100,50, makecol(255,255,0));
+		
+		//personagem imagem animada vai colocar um delay para trocar para a proxima imagem
+		if(frame_count>=frame_delay){
+			frame_count=0;
+			current_frame++;
+			if(current_frame>=total_frames){
+				current_frame=0;// volta pro frame inical
+			}
+		}
+		
+		//personagem criado e seus frames
+		masked_blit(personagem,buffer,
+		coordenadasimg[current_frame][0],coordenadasimg[current_frame][1],persx,persy,coordenadasimg[current_frame][2],coordenadasimg[current_frame][3]);
+	 
+		//movimento do personagem com animacao
+		if(key[KEY_LEFT]){ 
+	      persx -= 1;
+				masked_blit(personagem,buffer,coordenadasimg[current_frame][0],coordenadasimg[current_frame][1],persx,persy,coordenadasimg[current_frame][2],coordenadasimg[current_frame][3]);
+		}
+		if(key[KEY_RIGHT]){ 
+		   persx += 1;
+	     masked_blit(personagem,buffer,coordenadasimg[current_frame][0],coordenadasimg[current_frame][1],persx,persy,coordenadasimg[current_frame][2],coordenadasimg[current_frame][3]);
+		}
+		if(!key[KEY_LEFT] && !key[KEY_RIGHT]){
+			current_frame = 1;
+		}
+		//IMPEDIR QUE O PERSONAGEM SAIA da tela
+		if(persx<0)persx=0;
+		if(persx > screen->w - coordenadasimg[current_frame][2]){
+			persx = screen->w - coordenadasimg[current_frame][2];
+		}
+					
+		//livros caindo			
+    //outra funcao teste
+		atualizar_quadrado(&unicoquadrado,buffer);
+	  
+		
+		//jogue tudo que foi criado na tela
+		blit(buffer,screen,0,0,0,0, 800, 600);
+		
+		//limpe o buffer para figir que a animação de movimento
+		clear_bitmap(buffer);
+	}
+	
+	//despois de contruir tudo jogue fora
+	destroy_bitmap(personagem);
+	destroy_bitmap(buffer);
+	return 0;
+}
+END_OF_MAIN()
+
+int atualizar_quadrado(quadrado *quadrado, BITMAP* buffer){
+	if(!quadrado->ativo){
+		quadrado->x =rand()%(screen->w -30);
+		quadrado->y  =0;
+		quadrado->cor = makecol(rand()%256, rand()%256,rand()%256);
+		quadrado->velo = 1 + (rand()%2);
+		quadrado->tamanho = rand()%16+5;
+		quadrado->ativo = TRUE;
+	}
+	
+	quadrado->y += quadrado->velo;
+	
+	rectfill(buffer, quadrado->x, quadrado->y, quadrado->x + quadrado->tamanho, quadrado->y + quadrado->tamanho, quadrado->cor );
+	
+	if(quadrado->y > screen->h){
+		quadrado->ativo = FALSE;
+		return 0;
+	}
+	
+	return 1;
+}
