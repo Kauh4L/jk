@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html ;charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>modulo 3</title>
+<link rel="stylesheet" href="index.css">
+
+<style>
+
+body{
+	background: black url() center 100% fixed;
+    <!-- background-image: url('fundo/esquerda.png');
+	font-color: white;
+	color: Yellow;
+	height: 100vh;
+	background-size :100% 100%;
+	background-repeat: repeat-x/repeat-y/no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	
+}-->
+
+div.quadrado{
+	border: 3px solid black;
+	display: inline-block;
+	background-color: lightgray;
+	border-radius: 3px;
+	width: 200px;
+	height: 200px;
+}
+
+#f1{
+background-color:skyblue;
+}
+#f2{
+background-image: linear-gradient(to bottom, blue, green);
+}
+#f3{
+background-image: url('fundo/background.png');
+}
+
+#q1{
+	background-position: left top;
+}
+#q2{
+	background-position: left center;
+}
+#q3{
+	background-position: right bottom;
+}
+#q4{
+	background-position: center center;
+}
+
+.quadro{
+background-image: url('fundo/background.png');
+	border: 3px solid black;
+	margin: 10px;
+	width: 400px;
+	height:200px;
+}
+
+main{
+	color:black;
+	width: 400px;
+	background-color: white;
+	padding: 20px;
+	line-height: 20px;
+	margin: 10px;
+	border: 3px solid darkblue;
+	border-radius: 15px;
+}
+
+#container{
+	background-image: url();
+	background-size: 100% 100%;
+	
+	background-color:purple;
+	padding:10px;
+	height: 500px;
+	width: 400px;
+	position: relative;
+}
+#conteudo{
+	background-image:url();
+	background-size: 100% 100%;
+	
+	background-color:Yellow;
+	height: 525px;
+	width: 10px;
+	position: absolute;
+	
+	left: 50%;
+	top: 50%;
+	
+	transform: translate(-50%, -50%);
+}
+#conteudo1{
+
+	background-color:Yellow;
+	height: 10px;
+	width: 425px;
+	position: absolute;
+	
+	left: 50%;
+	top: 50%;
+	
+	transform: translate(-50%, -50%);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h3>VAmos aprender sobre backgrounds</h3>
+<p>já vimos background-image, background-color e background-image: linear-gradient, href no html e url em css</p>
+<p>AGora vamos aprender background-size serve pra mudar o tamanho da imagem mas a imagem continua com o mesmo tamanho em Kbs original e vai repetir ate completar todo o background se for menor, assim background-size: width px height px;<br> 
+e background-repeat você pode personalizar o background-size escolhendo se vão se formar so na horizontal(x) ou vertical(y), assim background-repeat: repeat-x/repeat-y/no-repeat;</p>
+<div class="quadrado" id="f1"></div>
+<div class="quadrado" id="f2">OI</div>
+<div class="quadrado" id="f3"></div>
+
+<hr>
+<h1>posicão de imagem de fundo</h1>
+
+<p>Agora background-position que vai de proporcionar qual parte da imagem voce quer que apareca, assim background-position: center/left/right center/bottom/top; com dois parametros para complementar-se a primeira e segunda posicao da imagem, a imagem por padrão é ancorada na posição esquerda em cima para mudar use background-position</p>
+
+<div class="quadro" id="q1"></div>
+<div class="quadro" id="q2"></div>
+<div class="quadro" id="q3"></div>
+<div class="quadro" id="q4"></div>
+<div></div>
+
+<hr>
+<h1>TAMANHO da imagem de fundo</h1>
+<h2>background-size: contain/cover</h2>
+<main>Eita como programa, Para você conseguir pegar a tela inteira com o background independente do dispositivo você vai ter que dizer background-size: 100% 100%; e height: 100vh; e width: 100vh; ou background-size: auto; vh é a medida para o viewport q é o tamanho da tela do dispotivo que visualiza a pagina, mas essa distorce quando o tamanho é modificado, alem do background-size: contain; mas vai criar borda se o limite for atingido, também há background-size: cover; que vai cortar um pouco a imagem para tentar preencher a tela toda até chegar em um limite e vai parar de tentar completar a tela quando chegar no limite e a imagem estará completa. </main>
+
+<h2>background-attachment: fixed</h2>
+<main>Agora para corrigir aqueles problemas do background size em que a imagem podia quebrar quando mexessemos no tamanho ou ia descendo vamos usar o attachment, assim background-attachment: fixed; que vai manter a imagem fixa na tela mesmo usando a rolagem da pagina.</main>
+
+<h2>shorthand background</h2>
+<main>é assim background: color image position repeat size attachment;</main>
+<hr>
+
+<h1>centralização vertical de caixas</h1>
+<p>primeiro que o posicão padrão de um item é relative mas há absolute tambem, assim position: relative/absolute; a diferença que com o absolute você terá agora propriedade left/top essas propriedades vão levar a imagem para onde você quiser como se quer deixar a imagem no meio será left: 50%; a imagem vai começar a se mover da esquerda para direita e top: 50%; a imagem vai começar a se mexer do de cima para baixo e o ponto de origem da imagem vai ser como já disse na esquerda em cima e para mudar esse ponto de origem vamos usar transform: translate(left%, top%); para podermos colocar o ponto de origem no meio da imagem diga translate(-50%, -50%) porque negativo pois se for positivo o ponto de origem vai mais para esquerda e não quero q vá para esquerda e sim para a direita o mesmo com o top do ponto de origem que está 50% ele vai ir ainda mais para cima, mas quero que vá para baixo , mas não quero que o ponto</p>
+<main>codigos: <br>
+position: relative/absolute; <br>
+<h3>ADICÃO NO ABSOLUTE:</h3>
+left: %; VAI MOVIMENTAR A CAIXA DA ESQ PARA DIREITA
+<BR>top: %; VAI MOVIMENTAR A CAIXA DA CIMA PRA BAIXO
+<BR>
+transform: translate(0%, 0%);<BR>VAI MOVIMENTAR O PONTO DE ORIGEM DA IMAGEM
+</main>
+
+<section id="container"> 
+	<article id="conteudo">
+	</article>
+	<article id="conteudo1">
+	</article>
+</section>
+
+
+<main>
+<hr>
+<h1>TAbelas</h1>
+
+<p>Para usar tabelas vamos usar a tag table junto a tr(linha da tabela) e td(table data ou celula) o tr fica dentro da table e td sempre dentro da tr, para você criar um "quadrado" você tem que criar uma linha para poder coloca uma celula ,assim &lt table &gt &lt tr &gt &lt td &gt oi &lt /td&gt &lt /tr&gt &lt /table&gt . E claro que podemos usar tudo que aprendemos nelas tambem.</p>
+
+<table>
+
+<tr> LINHAS CRIADAS
+<td>A1- CELULAS CRIADAS
+<td>A2
+<td>A3
+</tr>
+
+<tr>
+<td>B1
+<td>B2
+<td>B3
+</tr>
+
+<tr>
+<td>C1
+<td>C2
+<td>C3
+</tr>
+
+</table>
+
+<p>usamos uma adicão border-collapse: collapse; para que as margens da celula se sobreponham  </p>
+
+<table class="colapso" style= "border-collapse: collapse">
+
+<tr> LINHAS CRIADAS
+<td>A1- CELULAS CRIADAS
+<td>A2
+<td>A3
+<th>A4</th>
+</tr>
+
+</table>
+
+<H4>ALINHAMENTO VERTICAL: utilizando no td diga vertical-align: top/middle/bottom;</H4>
+
+<table class="mudanca" style="vertical-align: top">
+
+<tr> LINHAS CRIADAS
+<td>A1- CELULAS CRIADAS
+<td>A2
+<td>A3
+</tr>
+
+</table>
+
+<h4>PARTES da TAbela</h4>
+<p>tag thead - Cabeçalho da tabela<br>
+tag tbody - corpo da tabela<br>
+tag tfoot - rodape da TAbela<br>
+caption - legenda da tabela, sempre fica lá em cima tabela<br>
+scope - usado como seletor personalizar, mas só visual utilizado em th no thead como scope="col" e tfoot como scope="row/num" para indeticar as categorias que ha na tabela<br>
+Podendo ter tr, td e th que serve só para titulos, não dados como o td</p>
+
+<hr>
+<p>Para poder fazer um efeito zebrado usaremos uma pseudo-class nth-child(order(1n/2n/3n) or even/odd) para que a cada 1 celula ou celulas impares/pares, a propriedade definida vai acontecer, assim tbody > tr > td:nth-child(2n); isso significa que 2n = 2 * n, ou somente um numero tr:nth-child(2) que vai significar agora que o filho(child) vai ser afetado pelas proriedades definidas e que somente o tipo daquele elemento especifico vai ser afetado, assim tr:nth-child(2n); aqui você tem que os elementos que estão na tag tr a cada 2 * n serão afetados, mas se na tag tr o primeiro elemento não for td ele não será afetado, pois ele é o primeiro elemento mas não faz condição de ser um td para as definições serem aplicadas. </p>
+<p>Para que possamos afetar independente do elemento que quero afetar não ser o primeiro ou seg, terceiro do elemento usamos div:nth-of-type(1){ background-color:red;}</p>
+
+<div class="ap">
+	<h3>A</h3>
+	<P>B</P>
+	<p>C</p>
+	<p>d</p>
+	<p>e</p>
+</div>
+
+
+<table class="fo">
+
+<thead>
+	<caption>População das unidades Federativas</caption>
+	<tr>
+		<th scope="col">Estado</th>
+		<th scope="col">População</th>
+	</tr>
+</thead>
+
+<tbody>
+	<tr>
+		<td>São Paulo</td>
+		<td class="num">45.919.049</td>
+	</tr>
+	<tr>	
+		<td>Rio de Janeiro</td>
+		<td class="num">17.264.943</td>
+	</tr>
+	<tr>	
+		<td>Minas Gerais</td>
+		<td class="num">21.168.791</td>
+	</tr>
+</tbody>
+
+<tfoot>
+	<tr>
+		<th scope="row">Total de habitantes</th>
+		<th scope="row">0000</th>
+	</tr>
+</tfoot>
+
+<p>Fixar a tabela usando position: sticky; que cola as coisas em um ponto que escolha, assim 
+<pre>thead > tr > th{
+	position: sticky;
+	top: -1px;
+	background-color: black;
+}</pre></p>
+
+</table>
+
+
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<p>b</p>
+<hr>
+
+<h4>MESCLAGEM DE CELULAS</h4>
+
+<p>Para poder transformar duas celulas em uma ou uma celula vai ocupar 2 colunas, vamos usar colspan="2" coluna para celula ocupar vertical e rowspan="2" linha para ocupar em horizontal na propria tag td em html</p>
+
+<table class="fi">
+<tr>
+	<td>a</td>
+	<td >b</td>
+	<td rowspan="2">c</td>
+	<td>d</td>
+</tr>
+<tr>
+	<td>e</td>
+	<td>f</td>
+	<td>g</td>
+	
+</tr>
+<tr>
+	<td colspan="3">h</td>
+	<td>i</td>
+
+</tr>
+<tr>
+	<td rowspan="2">j</td>
+	<td colspan="2">k</td>
+	<td>l</td>
+
+</tr>
+<tr>
+	<td>m</td>
+	<td>n</td>
+	<td>o</td>
+</tr>
+</table>
+
+<table>
+	<tr >
+		<td colspan="4">A</td>
+		<td rowspan="4">B</td>
+	</tr>
+	<tr>
+		<td rowspan="4">C</td>
+		<td>D</td>
+		<td>E</td>
+		<td>F</td>
+	</tr>
+	<tr>
+		<td>G</td>
+		<td>H</td>
+		<td>I</td>
+	</tr>
+	<tr>
+		<td>J</td>
+		<td>K</td>
+		<td>L</td>
+	</tr>
+	<tr>
+		<td colspan="4">N</td>
+	</tr>
+</table>
+
+<table class="fe">
+<caption>FILMES FAVORITOS</caption>
+	<tbody>
+	
+	<tfoot>
+	<th scope="row" colspan="4">TOTAL</th>
+	<td>1000</td>	
+	</tfoot>
+	
+	<tr>
+		<TH scope="col">Grupo</TH>
+		<TH scope="col">Nomes</TH>
+		<TH scope="colgroup" colspan="3">Filmes</TH>
+	</tr>
+	<tr>
+		<th scope="rowgroup" rowspan="3">Mulheres</th>
+		<td>ana</td>
+		<td>Monstros S.A</td>
+		<td>The Flash</td>
+		<td>Patrulha Canina</td>
+	</tr>
+	<tr>
+		<td>bia</td>
+		<td>The Flash</td>
+		<td>Patrulha Canina</td>
+		<td>Monstros S.A</td>
+	</tr>
+	<tr>
+		<td>clau</td>
+		<td>Patrulha Canina</td>
+		<td>Monstros S.A</td>
+		<td>The Flash</td>
+	</tr>
+	<tr>
+		<th scope="rowgroup" rowspan="3">Homens</td>
+		<td>jose</td>
+		<td>Jose do egito</td>
+		<td></td><td></td>
+	</tr>
+
+	<tr>
+	<td>Emanuel</td>
+	<td>Spider-Man</td>
+	<td></td><td></td>
+	</tr>
+
+	<tr>
+	<td>Alexandro</td>
+	<td>Smile</td>
+	<td></td><td></td>
+	</tr>
+
+	</tbody>
+</table>
+
+<table class="fa">
+
+	<colgroup>
+		<col class="carea">
+		<col class="cdisc">
+		<col class="cnota" span="2">
+		<col class="cmedia">
+	</colgroup>
+
+	<thead>
+	
+		<tr>
+		<th rowspan="2" scope="col">Área</th>
+		<th rowspan="2" scope="col">Disciplína</th>
+		<th colspan="2" scope="colgroup">Notas</th>
+		<th rowspan="2" scope="col">Média</th>
+		</tr> 
+		
+		<tr>
+		<th>Notas1</th>
+		<th>Notas2</th>
+		</tr>
+		
+	</thead>
+	
+	<tbody>
+		<tr>
+			<th rowspan="4" scope="rowgroup">Exatas</th>
+			<th class="materia">Matemática</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Química</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Biologia</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Física</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr class="media">
+		<th colspan="4" scope="row">Media de Exatas</th>
+		<TD>0</TD>
+		</tr>
+		
+		<tr>
+			<th rowspan="2" scope="rowgroup">Humanas</th>
+			<th class="materia">História</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Geografia</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr class="media">
+			<th colspan="4" scope="row">Média de Humanas</th>
+			<td>0</td>
+		</tr>
+		
+		
+	</tbody>
+</table>
+
+<p>Para ser mais rapido ao modificar colunas vamos usar a tag colgroup e tag col, sem fechamento, usando class, assim &lt colgroup &gt &lt col class="nomedacoluna" &gt
+&lt /colgroup &gt . Se você tem 4 colunas faça 4 col dentro do colgroup e para afetar duas colunas dentro de uma use span, assim span="2", assim como está na tabela acima.</p>
+
+</main>
+
+<main>
+<h3>Overflow</h3>
+<p>Vamos usar Overflow para as tabelas responsivas quando elas couberem na tela ,mas temos que usar numa div não na table, assim div
+
+{overflow: auto;} em que quando não couber mais ele vai criar uma rolagem na propria tabela mantendo sua proporções</p>
+
+
+
+<div id="container">
+
+<table class="ga">
+
+<caption>EXEMPLO</caption>
+<thead>
+
+<tr>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>c</th>
+	<th>c</th><th>a</th>
+	<th>a</th>
+	<th>c</th><th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>c</th>
+	<th>c</th><th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>a</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>b</th>
+	<th>c</th>
+	<th>c</th>
+</tr>
+
+</thead>
+
+</table>
+</div>
+
+</main>
+
+
+
+</body>
+
+

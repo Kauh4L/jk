@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/*comentário */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@font-face{
+	font-family:'Swallow Kick';
+	src: url('FONTE/Swallow Kick.otf') format('opentype'), url('FONTES/Swallow Kick.ttf') format('truetype');
+}
+body{
+	background-color: #AD0938;
+	/* também há o radial-gradient */
+	background-image: linear-gradient(90deg, #3296FA, #2F6EAD);
+	font-size: 12pt;
+	color: #FAF625;
+	font-family: Arial, Helvica, sans-serif;
+	
+}
+main{
+	background-color: #AD0938;
+	box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5);
+	width: 600px;
+	padding:10px;
+	margin: auto;
+	border-radius: 16px;
+	font-size: 19px;
+}
+h1{
+	background: linear-gradient(to left,#FC1456 70%, #AD0938);
+	color: #FAF625;
+	text-align: center;
+	text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.5);
+	/* text-shadow: para direita, para baixo, espalhar, cor. */
+}
+
+.p{
+  font-family: 'Pacifico';
+  font-size: 19px;
+}
+.nome{
+	color: #FAF600;
+}
+.cor{
+  color:red;
+}
+.cor1{
+  align:justify;
+  color: aquamarine;
+}
+.cor2{
+  align:justify;
+  color: blueviolet;
+}
+.cor3{
+  align:justify;
+  color: darkgreen;
+}
+.corrgb{
+  text-align:justify;
+  color:29,100,28;
+}
+.corrbga{
+  align:justify;
+  color:50%,20%,20%,40%;
+}
+.corhsl{
+  align:justify;
+  color:290,20%,50%;
+}
+.corhsla{
+  align:justify;
+  color:290,20%,50%,0.5;
+}
+.peso{
+	font-weight: bold;
+}
+.te{
+	font-style: oblique;
+}
+.decorat{
+	text-decoration: underline;
+}
+.juntos{
+	font: oblique 300 19px Arial, sans-serif;
+}
+.estilo{
+	font-family: 'Swallow Kick';
+	text-align: left;
+}
+div{
+	display: inline-block;
+	background-color: lightgray;
+	border: 1px solid black;
+	text-align: center;
+	height: 200px;
+	width: 200px;
+}
+div:hover{
+	color:blue;
+}
+div > p{
+	display:none;
+}
+div:hover > p{
+	display: block;
+	color:red;
+}
+a{
+	color:red;
+}
+a:visited{
+	color:darkred;
+}
+a:hover{
+	color:black;
+	text-decoration: underline;
+}
+a:active{
+	color: yellow;
+}
+a::before{
+	content: '&&';
+}
+a::after{
+	content: '%%'
+}

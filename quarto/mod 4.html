@@ -1,0 +1,65 @@
+<!DOCTYPE html!>
+<html lang="pt-br">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html ;charset=utf-8" />
+<title>Módulo 4</title>
+<style>
+	iframe{
+		width: 400px;
+		height: 400px;
+		<!--border: 1px solid blue;-->
+	}
+	table.fa{
+	border-collapse: collapse;
+	width: 350px;
+}
+	.fa thead th{
+	background-color: gray;
+	color: white;
+	border:1px solid black;
+}
+	.fa th,td{
+	border:1px solid black;
+}
+	#page1{
+		display: block;
+		margin: auto;
+	}
+</style>
+
+</head>
+<body>
+	<h1>TESTANDO IFRAME</h1>
+	<P>Pode ser utilizado para varias coisas, mas é usado só para coisas especificas </P>
+	<p>Acessar sites dentro de outro, entretanto alguns site tem proteções para não serem utilizados em iframe</p>
+	<p>Iframe significa in line, o frame moldura estará na linha</p>
+
+	<p>Por padrão suas medidas são de 300x150, caso não seja compatível escreva dentro da tag o link do site ou uma mensagem de aviso. </p>
+	<p>
+	<iframe src="..\meusite\meunsite.html">
+		<a href="..\meusite\meunsite.html" target="_blank">Vá ao site</a>
+		Para testar seu Iframe
+	</iframe>
+	</p>
+	
+	<P>Parâmetros scrolling="yes/no"(habilita ou desabilita a rolagem do site)pode n funcionar em todos navegadores  e frameborder="0/1"(cria uma bordar)/P>
+	
+	<p>
+	<iframe  src="..\meusite\meunsite.html" height="900" scrolling="no" frameborder="12">
+		<a href="..\meusite\meunsite.html" target="_blank">Vá ao site</a>
+		Para testar seu Iframe
+	</iframe>
+	</p>
+	
+	<p>Da pra utilizar com tabelas também quer dizer uma pagina de tabelas, e modificar as proriedades normais dos elementos com css </p>
+	
+	<iframe id="page1" src="new 1.html">
+		pow, talvez esse site esteja prottegido
+	</iframe>
+	
+	
+	
+</body>
+
+</html>

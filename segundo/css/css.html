@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device_width, initial-scale=1.0"/>
+<title>testando</title>
+<link rel="stylesheet" href="indexcss.css">
+</head>
+
+<body>
+<main>
+<h1>CAPÍTULO 1.1</h1>
+<p>css inline se sobrepõe entre os outros. Ele é usado na propria tag e somente a ela. no css é utilizado : não igualdade não necessita de aspas. A regra é dizer qual a tag você quer modificar e abrir {} não () e sempre um ; no fim da linha de codigo.</P>
+<h1>CAPÍTULO 1.2</h1>
+<p>css interno/global é afeta as tags globalmente. exemplo a tag h1 com cor azul todas as tags h1 serão azul daqui pra frente. E se utiliza assim body{} e sempre coloque ; no fim da linha de codigo. </P>
+<h1 class="nome">CAPÍTULO 1.3</h1>
+<p>css externas, você consegue definir configurações de style por outro arquivo .css que contem as definições do seu site tamanho de tags,body,cores.
+para criar uma conexão com eles no html use na tag head a tag link, incremento rel="stylesheet" e href="caminho.css". Esse pode ser linkada várias páginas ao invez de somente uma.
+. Você pode definir certas coisas para certos grupos , exemplo com incremento class="nome" definido em uma tag no html, já no css deve começar com um "." com nome da classe assim <mark>.nomedaclasse{}</mark> então modifica somente essa classe. </P>
+<hr>
+
+  <h1>
+    Paleta de cores e como usar.
+  </h1>
+  <p>assim sera em html, se for inline utilize o style="color=red;background:blue"</p>
+  <p>na folha css, sera o elemento h1{color:red; background:blue}</p>
+  <p>Aqui nos teremos os parametros de tipos de jeitos para usar as cores no css: rgb{}, rgba{}, hsl{} ou hsla{}, e há o tipo textual que dizendo o nome da cor em ingles. Você pode usar números, porcentagem ou em decimais, não dá para misturar porcentagem com numerais, somente numerais e decimais. </p>
+  <h1 class="cor">RGB</h1>
+  <p class="corrgb">Em rgb para escolher a cor sera utilizado 3 elementos (red, green, blue)=(0,0,0)=(0%, 0%, 0%) que dependendo da combinação de numeros você tera uma cor, assim: <mark>(style="color : 0, 0, 0 ; background : 0, 0, 0;")</mark> . os numeros variam de 0 ate 255</p>
+  <h1 class="cor1">RGBAlpha</h1>
+  <P class="corrgba">Aqui já temos a função transparente adicionada.Entretanto navegadores anteriores a IE8 não suportam RGBA. A opacidade é definida no fim (red, green, blue, alpha-opacity) = (0,0,0,0) = (0%, 0%, 0%, 0%), assim: <mark>(style="color : 0, 0, 0, 0 ; background : 0%, 0%, 0%, 0%;")</mark> </P>
+  <h1 class="cor2">hsl</h1>
+  <p class="corhsl">Já com hsl temos parametros diferentes para chegar na cor, HSU-> Hue(H) = tom, Saturation(S) = saturação e Lightness(L) = luminosidade. Hsl é dado assim (0, 0%, 0%) o campo "h" vai de 0 ate 360. Assim <mark>(style="color : 0, 0%, 0% ; background : 0, 0%, 0%;")</mark>. Campo h é como estivesse em graus variando de 0 a 360.</p>
+  <h1 class="cor3">HSLA</h1>
+  <p>Aqui com adição do transparente. HSLA(0, 0%, 0%, 0.0) Entretando essa função só funciona em navegadores que suportam HSLA ateriores a IE8 não funcionam. O campo "a" vai de 0 a 1 "(style = "color : 0, 0%, 0%, 0.0; background : 0, 0%, 0%, 0.0;")"</p>
+<hr>
+<h1>MAIN</h1>
+<p>A tag main em português se chama principal, então essa tag tornara tudo que está dentro algo imporante.</p>
+
+<hr>
+<h1>DEgrade de cores</h1>
+<p>o parametro babackground-image cria um degrade de cores nas tags, assim background-image: linear-gradient(90deg, #3296FA, #2F6EAD);", linear-gradient diz que o degra
+de vai ser feito em linha reta dentro dos parenteses vamos ter a inclinação em graus ou a direção de como vai ser feito o degrade se for 40 graus ou to left/right/bottom/top o degrade sera feito com essa
+inclinação, o proximo comando é a escolha da primeira cor e assim adiante escolhendo as cores que vão mudando nessa ordem.
+existe tambem o radial-gradient(graus, cor1,cor2...)</p>
+
+<hr>
+<h1>box-shadow e text-shadow</h1>
+<p>Para criar uma sombra no texto usasse o parametro text-shadow, assim text-shadow: pixels para direita | pixels para baixo | espalhar | tipo de sitema de cor(configuração da cor). Exemplo: text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.5);" .O mesmo sera com box-shadow, exemplo: box-shadow: 4px 2px 4px rgba(0, 0, 0, 0.5);"
+ só que esse é utilizado quando ha um box no site ou a tag main </p>
+</main>
+
+<hr>
+<h1>CAPITULO 2</h1><H2>FONTE-family</H2>
+<p>parametro font-family é onde escolhera a fonte do seu site ou a combinação de fontes para o site, assim tag &lt style &gt body{font-family : sans-serif, arial, helvica;} , a combinação de fontes fara com que detecte se alguela esta disponivel se não tentara a outra fonte.</p>
+
+<hr>
+<h1>font-size</h1>
+<p>As fontes terão varias medidas para tamanho assim como em outras coisas.</p>
+<p>medidas absolutas: <br>
+cm, mm, in(polegada), px(pixel), pt(ponto), pc(paica). atenção: ponto e paica são para materiais impressos. <br>
+medidas relativa:em(1em=16px, RELATIVO altura do M), ex(altura x da fonte, altura do X), rem(relativo a fonte configurada no body), vw(viewport, relativo a largura da tela ), vh(relativo a altura da viwport).
+<br>UTILIZAR PX OU EM. ALTURA DA FONTE PADRÃO É DE 16PX</p>
+
+<hr>
+<h1>font-weight/PESO , font-style, text-decoration e  shorthand</h1>
+<p class="peso">Aqui você define como as letras ficam mais gordinhas ou fininhas com parametro font-weight: lighter/normal/bold/bolder ou de 100 - 900; nem todas vão ate 900. Viiu.</p>
+<p class="te">a font-style so vai te dizer que tipo de fonte é, assim font-style: normal / italic/ oblique; , como esta agora.</p>
+<p  class="decorat">para usar o sublinhado é text-decoration, assim text-decoration: underline; . VEja </p>
+<p class="juntos">ainda há a combinação desses 4 todos juntos condensado com parametro font, assim font: font-style | font-weight | font-size | font-family; </p></p>
+
+<hr>
+<h1>FONTES EXTERNAS</h1>
+<p class="p">Para usar uma fonte externa use @import url:'url da fonte'; fora na parte branca do css não em elementos, depois escreva font-family: 'nome da fonte'; desse jeito se for no css; no html usamos tag link, assim &lt link rel="preconnect" href=" url da font" crossrin &gt . FICANDO COMO ESTA AGORA.</p>
+
+<hr>
+<h1 class="estilo">FONTE INTERNA</h1>
+<p>Para conseguir usar fontes que você comprou ou baixou, no css vamos dizer uma regra:
+<code><pre>@font-face{
+font-family: 'nome da font';
+scr: url('nome da fonte.ttf') format(formatos de fonte);
+}
+</pre></code>
+podendo adcionar mais de uma fonte e configurações de fonte. Depois disso você vai conseguir escolher essa fonte na tag que quiser como em H1</p>
+<p>VEJA COMO ESTÁ nesse H1.<br>tipos de formatos são: </p>
+
+<ul type="disc">
+<li>otf(opentype)
+<li>tff(truetype)
+<li>embedded-opentype
+<li>truetype-aat(apple advanced Typography)
+<li>svg
+</ul>
+
+<h1 class="estilo">Alinhamento de textos com css</h1>
+<p>Bem simples usar use parâmetro text-align: center/justify/left/right; no css. Como pode ver no h1. Há também o text-indent: XXpx ; usado para definir o espaçamento no inicio do paragráfo. E mais uma dica para fazer aquele espacamento do inicio do paragrafo use text-indent: medida(tamanho);</p>
+
+<hr>
+<h1>CAPITULO 3</H1>
+<h2>Seletor id em css, indentificar elemento e classificar elemento</h2>
+<p>Bem ele vai te proporcionar formatações diferentes para mesmos elementos como H1's, entretando somente um elemento pode ter id. Utilizando parametro id="nomequalquer" na tag em html, indo para o css esse id vira 'tag#nomequalquer', exemplo em html id="to" em css " h1#to{color: white} " . Essa função a gente tá usando a bastante tempo como no capitulo 1 em que temos h1's que tem cores diferente sendo a mesma tag</p>
+<p>Há outro que também faz isso é o class, assim como id só que em css ele vira "." fica em html class="nomequalquer" em css ".nomequalquer". Com o class você já pode utilizar uma classe para varios elementos </p>
+
+<hr>
+
+<h1>pseudo-classes</h1>
+
+<p>
+Usaremos a tag div que é um espaço qualquer que ocupar uma linha inteira da tela, assim &lt div &gt 01 &lt /div &gt, em css você pode colocar formatações nele. 
+</p>
+
+<p>
+Vamos usar aqui um parametro display do css e div:hover que é pseudo-classe e que essa fará algo, que foi definido dentro dos parenteses.
+</p>
+
+<p>
+div > p, siginifica que p será filho do div, então o conteudo de p só aparecera quando for chamado dentro de um div. Vamos usar o hover que é pseudo-classe, assim div:hover > p {color:red;} 
+</p>
+
+<div>
+passe o mouse aqui 
+<p>o texto está escondido</p>
+</div>
+
+<hr>
+
+<h1>psseudo-elemento, personalizando links</h1>
+
+<p>
+
+podem agir nas classes nos elementos nos ids, eles mexem diretamente no conteúdo<br>
+simbologia para usar: 
+<ul>
+<li>id = #</li>
+<li>class = .
+<li>pseudo-classe = :
+<li>pseudo-element = ::
+<li>children = &gt
+</ul>
+
+</p>
+
+<p>alguns pseudos : <br>
+hover - pseudo class, quando o cursor estiver sobre algo acontece, como mudar a cor. <br>
+visited - pseudo class, se for visitado um link algo acontece, como a cor.<br>
+active - pseudo class, que quando ele é clicado vai ativar algo. <br>
+children - pseudo class, só é ativado quando for chamado.<br>
+checked - pseudo-classe,<br>
+empty - pseudo-classe,<br>
+focus - pseudo-classe,<br>
+</p>
+<ul>
+<li>pseudo-element - before, vai ser modificado, antes do conteudo na tag, é assim, exemplo: %%, na tag sera: %%jose, pode ser usado com outro pseudo-element.
+<li>pseudo element - after, vai ser colocada a configuração que foi definida, depois do conteúdo na tag, exemplo: &&. Na tag sera: jose&&. Juntando o before e o after teremos %%jose&&.
+<li>pseudo element - first-letter, a primeira letra do conteudo de uma block-level vai vir com as configurações definidas.
+<li>pseudo element - first-line,
+</ul>
+
+<ul>
+<li><a href="youtube.com">youtube</a>
+<li><a href="facebook.com">facebook</a>
+<li><a href="twitter.com">twitter</a>
+</ul>
+
+<h1>MODELO DE CAIXA</h1>
+
+<p>Tudo aquilo que é exibido é exibido em forma de caixa, de tal modo que a grande maioria das caixas na HTML podem eestar dentro da outra. Podendo formar hierarquia de caixas. Um elemento dentro do outro chamamos de ANINHAMENTO, em forma de ninho. Uma caixa seria todo elemento de um site visible na tela.</p>
+<P>Considerando que todo os elementos de um site estão dentro de uma caixa, quando formatamos um elemento com CSS atraves de seletores, na verdade estamos configurando a caixa que vai estar exibindo esse elemento.</P>
+<p>Assim todo elemento tem parte do conteudo, borda, padding(acolchoamento), margin, outline. E só irão se manifestar se pre-configuradas.</p>
+
+<h2>ANATOMIA DAS CAIXAS</h2>
+
+<UL>
+<LI>Parte do conteúdo: é o tamanho especifícado em 2 medidas height(altura) e width(largura)</LI>
+<li>Borda: é a llinha que circunda o seu conteùdo, podemos traçar uma linha envolta da Parte De Conteudo(define o tamanho da CAIXA) </li>
+<li>padding: é o distanciamento que damos entre a borda e parte do conteudo, para dar aquela engordada no elemento, mantendo a borda longe do conteudo.
+<li>margin: é um espaçamento EXTERNO logo apos a borda, serve para que as caixas não parecam sobrepostas uma em cima da outra.-
+<li>outline: é um contorno tracejado, não é uma segunda borda, é um tracejado do lado de fora da borda, mas dentro da margem.
+</UL>
+
+<h2>TIPOS DE CAIXAS</h2>
+<UL>
+<LI>
+	box-level/block-level: o elemento sempre irá se inicia em uma nova linha e como padrão sempre occupy a largura total da tela ou do elemento onde está contido. As caixas desse tipo são isoladas e independentes.
+	<ul>
+		<li>EX:div, main, video, h1</li>
+	</ul>
+</LI>
+
+<li>inline: já o inline vai começar no ponto exato que foi definido, no meio de um paragrafo por exemplo. E a largura dele ocupa apenas o tamanho relativo ao seu conteudo, sendo que não ira quebrar a linha ao terminar, continuando o conteudo de forma direta sem pular para a proxima linha.
+	<ul>
+		<li>EX: a, span, code, strong, em</li>
+	</ul>
+</li>
+</UL>
+
+<h1>EXEMPLOS DE CAIXA DE BOX-LEVEL</h1>
+<P>COMO a função inspecionar do chrome você consegue ver o codigo dos sites, no body você pode ver que a um elemento display com a configuração 'block(block-level)'</P>
+<P>VAMOS para outra pagina para continuar os assuntos: <a href="pagina2/css.html" target="_blank" rel="next">PAGINA 2</a></P>
+
+<hr>
+<h1>variaveis no css</h1>
+<p>Para usar variaveis vamos ter, :root{ --variavelnome: #cor/'fonte' ; }</p>
+<p>E mais uma dica para afetar todos ps elementos usamos por exeplo *{ margin:0; }</p>
+
+<hr>
+<h1>line-height , text-alignx, text-indent, text-shadow</h1>
+<p>line-height é espaçamento entre linhas. line-height: 2em;<br>
+text-align: top/left/right/bottom , defini a posição do texto.<br>
+text-indent: 3em, é o espaço da primeira linha do bloco .<br>
+text-shadow: px horiz, px vertc, espalhamento, cor; cria uma sombra no texto.</p>
+
+<hr>
+<h1>list-style-position, columns, list-style-type</h1>
+<p>serve para no caso das bolinhas da lista ficarem para fora, list-style-position: inside; e columns que server para dividir a lista em colunas, columns: 2;<br>
+Para o list-style-type serve para trocar a bolinha por um emoji usando \(barra invertida) e codigo do emoji, list-style-type:'\2714'; e para ter um espaço entre o emoji e o texto coloque '\00A0' quantos vezes for para ter um espaço. <br> 
+Usamos \ para usar emojis assim \1F480 no css.</p>
+
+<hr>
+<h1>line-height , text-alignx, text-indent, text-shadow</h1>
+
+
+
+</body>
+
+
+</html>
+
+<!--
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8_decode" >
+
+	estilo interno
+
+<style> body{
+	background-color: lightgoldenrodyellow;
+	font-size: 12pt;
+	color: chocolate;
+	font-family: Arial;
+}
+
+h1{
+	color: red;
+}
+
+a{
+	color: crimson;
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<p><a href="../new 1.html">voltar para a pagina anterior</a></p>
+</body>
+</html>
+
+-->

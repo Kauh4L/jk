@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta http-equiv="Content-Type" content="text/html ; charset=UTF-8">
+<title>CAIXAS</title>
+<style>
+	h1{
+		background-color: lightgreen;
+		height: auto;
+		width: auto;
+		text-align: center;
+		
+		border-width: 10px;
+		border-style: solid;
+		border-color: black;
+		
+		padding-top: 20px;
+		padding-right: auto;
+		padding-bottom: 20px;
+		padding-left: auto;
+	}
+	a{
+		text-align: left;
+		border-width: 20px;
+		border-style: flex;
+		border-color: black;
+		
+		padding-top: 20px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+	}
+	#cor{
+		border: 20px solid black; 
+		padding: 30px;
+		border-image-source: url('cor.png');
+		border-image-slice: 20;
+		border-image-repeat: repeat;
+	}
+	main{
+		background-color: red;
+		text-align: center;
+		
+		padding-top: 200px;
+		padding-right: 200px;
+		padding-bottom: 200px;
+		padding-left: 200px;
+		
+		border-color: darkblue;
+		border-width: 20px;
+		border-style: solid;
+		
+		margin-top:100px;
+		margin-left:100px;
+		margin-bottom:100px;
+		margin-right:100px;
+		
+		border-outline: 20px;
+		outline-color: blue;
+		outline-width: 12px;
+	}
+	body{
+		background-color:silver;					
+		background: linear-gradient(120deg, #9558EC , #FD5308, #0291cd );
+	}
+	header{
+		background-color: white;
+		padding: 10px;
+		margin:10px;
+	}
+	nav{
+		background-color: #4ACBC1;
+		padding: 4px;
+		box-shadow: 4px 3px 11px 1px black;
+	}
+	#bor{
+		background-color: #4ACBC1;
+		padding: 4px;
+		border-radius: 3px;
+	}
+	nav > a{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+	margin-right: 30px;
+	}
+	nav > a:hover {
+	text-decoration: underline;
+	}
+	footer{
+		background-colors: black;
+		color: white;
+		text-align: center;
+		padding: 1px;
+		margin: 0px;               
+	}
+	footer >p{
+		margin: 0px;
+	}
+	article{
+		background-color: lightgrey;
+		padding: 5px;   
+	}
+	article > aside{
+		background-color: rgb(165, 165, 165);
+	}
+</style>
+
+</head>
+<body>
+
+<h1>Exemplos DE CAIXAS, VAMOS TESTAR AQUI</h1>
+
+<p>
+user-angent é seu computador ele configura automaticamente as configurações não configuradas na html, ele vai se adptar ao texto.
+</p>
+
+<h1>configurações no h1(block-level)</h1>
+
+<p>
+Exemplos de caixa box-level- Parágrafos também são exemplos de caixa inline-level.
+</p>
+
+<a href="#">links são exemplos de caixa inline</a>
+
+<p>Detalhes para border e padding, as medidas são dividas em 4 partes comecando de cima e a seguencia vai em sentido horário, assim:<br>
+padding-top: 10px;<br>
+padding-right: 10px;<br>
+padding-bottom: 10px;<br>
+padding-left: 10px; , é dessa forma também para o border, margin everything.</p>
+
+<main>
+
+<p>Veja AQUI, as configurações de padding e border</p>
+
+</main>
+
+<main>Agora margin</main>
+
+<p> Para deixar a margem exatamente no meio utilize 'auto', ele vai se ageitar de acordo com seu navegador.<br>
+Existe a forma mais simples com a shorthand que fica, margin: 20px,20px,20px,20px; ainda em sentido horario. Isso funciona para os outros: padding, para o outline e border fica outline/border: width,style(dashed,solid),color </p>
+
+<p>Ainda sobre inline e block, podemos trocar os seus papeis como a tag A que é display:inline vira display:block e ocupar uma linha inteira, um display:block , vira um inline e ocupar o exato lugar onde foi configurado no codigo. E claro você não vai poder fazer altura e largura porque ele esta numa linha. </p>
+
+<h1>Groupimg tags</h1>
+<p>Sempre foram 2 div e span, e usava id para diferencialas. Agora semânticamente há novas tags para organizar o conteúdo.</p>
+<p>HEADER: é onde vai ficar seu cabeçalho. Incluí titulo e subtítulos h1 - h6 e conter menus de navegação .<br>
+NAV: área que possui links de navegação , nav normalmente está no header.<br>
+SECTION: é o agrupamento de conteúdos do mesmo tema(tematico) tipicamente com cabeçalho.<br>
+ARTICLE:contem um conteúdo que pode ser lido independente e dizem respeito a um mesmo assunto. Usado para delimitar um post de blog, forum, notícia . <br>
+MAIN: delimita o conteúdo principal, concentra seções, artigos e conteúdo periféricos.<br>
+ASIDE: delimita conteúdo periférico e complementa ao conteúdo principal da seção ou artigo como imagem ao lado do texto.<br>
+FOOTER: cria um rodapé, para o site inteiro, seção ou artigo. Possuí informações sobre autoria, links adicionais, mapa do site, documento associado.<br>
+</p>
+
+
+<h1>SOMBRA NAS CAIXAS</h1>
+<P>vamos usar algumas caixas(tag): article , nav, footer, header, main.</P>
+<p>Para usar sombra vamos dizer, box-shadow: tam.horizontal, tam.vertical, enbaçamento, espalhamento, cor; e tem um  </p>
+
+<nav>
+	Veja como esta aqui.
+</nav>
+
+<h1>border-radius arredondado</h1>
+
+<p>para usar essa função, border-radius: 33px , 33px, 33px, 33px; assim como border pode ser em shorthand.</p>
+<nav id="bor"> olha que legal, border-radius, os cantos arredondados.</nav>
+<p> E uma adição a borda colorida, com <br></p>
+
+<h2 id="cor">BORDA IMAGEM</h2>
+
+</body>
+</html>

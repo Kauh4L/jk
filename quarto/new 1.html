@@ -1,0 +1,112 @@
+<!DOCTYPE html!>
+<html lang="pt-br">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html ;charset=utf-8" />
+<title>SIte teste</title>
+<style>
+	iframe{
+		width: 400px;
+		height: 400px;
+		<!--border: 1px solid blue;-->
+	}
+	table.fa{
+	border-collapse: collapse;
+	width: 350px;
+}
+	.fa thead th{
+	background-color: gray;
+	color: white;
+	border:1px solid black;
+}
+	.fa th,td{
+	border:1px solid black;
+}
+	tr:nth-child(2n){
+		background-color: gray;
+	}
+</style>
+
+</head>
+		<table class="fa">
+
+	<colgroup>
+		<col class="carea">
+		<col class="cdisc">
+		<col class="cnota" span="2">
+		<col class="cmedia">
+	</colgroup>
+
+	<thead>
+	
+		<tr>
+		<th rowspan="2" scope="col">Área</th>
+		<th rowspan="2" scope="col">Disciplína</th>
+		<th colspan="2" scope="colgroup">Notas</th>
+		<th rowspan="2" scope="col">Média</th>
+		</tr> 
+		
+		<tr>
+		<th>Notas1</th>
+		<th>Notas2</th>
+		</tr>
+		
+	</thead>
+	
+	<tbody>
+		<tr>
+			<th class="area" rowspan="4" scope="rowgroup">Exatas</th>
+			<th class="materia">Matemática</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Química</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Biologia</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Física</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr class="media">
+		<th colspan="4" scope="row">Media de Exatas</th>
+		<TD>0</TD>
+		</tr>
+		
+		
+		<tr>
+			<th class="area" rowspan="2" scope="rowgroup">Humanas</th>
+			<th class="materia">História</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<th class="materia">Geografia</th>
+			<td>0</td>
+			<td>0</td>
+			<td>0</td>
+		</tr>
+		<tr class="media">
+			<th colspan="4" scope="row">Média de Humanas</th>
+			<td>0</td>
+		</tr>
+		
+		
+	</tbody>
+</table>
+	
+</body>
+
+</html>

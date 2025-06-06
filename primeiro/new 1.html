@@ -1,0 +1,311 @@
+<?php 
+	$nota=9;
+	$nota2=5;
+	$cor="#000000";
+	$cor2="#000000";
+	if($nota>=6){
+		$cor="#008000";
+	}else{
+		$cor="#ff0000";
+	}
+	if($nota2>=6){
+		$cor2="#008000";
+	}else{
+		$cor2="#ff0000";
+	}
+ ?>			
+		
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="favicon23.ico" type="image/x-icon"/>
+<title>Exercício</title>
+<style>
+mark{
+	background-color:yelow;
+}
+hr{
+	color:red;
+}
+</style>
+</head>
+
+<body bgcolor="#C4E1FF">
+
+<img src="download.png" alt="img.png" width="100" height="100">
+<h2>BOLETIM</h2>
+<p>adicionando imagem</p>
+
+<hr> <!-- uma linha horizontal -->
+<!--para maior q e menor q usar "&gt" e "&lt;"-->
+	<p> &lt hr &gt cria uma linha horizontal </p>
+	
+	<p>a tag &lt p &gt cria uma parágrafo, EAI GATA OLHA COMO EU ARRASO</p>
+<hr>
+<p>a tag table &lt table &gt cria uma tabela com borda preenchimento de celula e espaçamento de célula 
+<br>na tag td cria celulas horizontais na tabela e está sempre dentro <br>da tag tr cria celulas verticais </p>            
+			   <table width= "940" border="1" cellpadding="2" cellspacing="1">
+				
+            <tr>							
+                 <td bgcolor="#F8872D">Nota</td>
+				 <td bgcolor="#F8872D">Nota 2</td>
+            </tr>
+	<tr>
+    <td bgcolor="<?php echo $cor;?>"><?php echo $nota; ?></td>
+	<td bgcolor="<?php echo $cor2;?>"><?php echo $nota2; ?></td>
+    </tr>	
+	<tr>
+	<td>passou ou não</td>
+	<td>passou ou não</td>
+			</tr>	
+             </table>
+			 
+	<hr>		 
+	<p>vamos adicionar simbolos especias utilizando & e o nome do caractere em ingles
+	&reg;
+	&copy;
+	&trade;
+	&euro;
+	&pound;
+	&yen;
+	&cent;
+	&delta;
+	&Delta;
+	&uparrow;
+	&uarr;
+	<br>
+	
+	<hr>
+	Vamos adicionar alguns emotes<br>
+	& = significa "Ê" comercial <br>
+	, para adicionar eles, esses vão comerçar sempre com "Ê" "#" e "x".
+	<br>&#x1F596;
+	
+	<hr>
+	<p>para adicionar uma imagem usamos a tag img e src juntos</P>
+	<img src="image.jpeg" alt="imagem teste.jpeg">	
+	</p>
+	<hr>
+	
+	<p>nesta frase temos a tag b ou strong como <b>nesse é utilizado sem semântica destaque</b> em negrito
+	e <i>lapis</i> em italico a tag i ou em.
+	<br>
+	e nessa <strong>tem semântica</strong>
+	e nessa <em>para MANA</em> tem semântica</p>
+	
+	<hr>
+	
+	<p> marcação olha só <mark style="background-color:red">BOOOM</mark>, utilizando a tag mark e para colorir <mark>style="background-color:'cor'"</mark> <br>e para afetar todos os mark's <mark>mark{
+	background-color:limegreen;}</mark> na tag style dentro da tag &lt head &gt
+	</p>
+	
+	<hr>
+	
+	<p>tag big que está obsoleta <big>iyeh</big> ou , palavras ficam grande nessa tag.
+	<br>e tag small está <small>iyeh </small>em uso, palavras ficam pequenas nessa tag</p>
+	
+	<hr>
+	
+	<p>	para marca um texto excluido usasse a tag del, <del>assim gostou?</del>
+	</p>
+
+<hr>
+	<p> para sublinhar a tag u te ajuda, <u>te achei</u> ou tag ins que é semantica </p>
+<hr>
+	<p>texto sobrescrito tipo levar algo para cima x elvado a 20+3 usasse a tag sup, x<sup>20</sup>+3</p>
+<hr>
+	<p>texto subescrito tipo descer algo para baixo com a tag sub, exemplo: H2O será H<sub>2</sub>O</p> 
+<hr>
+<h2>COdigo-fonte</h2>
+
+	<p>o document.getElementById('teste') é escrito em linguagem JavaScript. com a tag code fica <code>document.getElementById('teste')</code></p>
+
+<hr>
+
+	<p> o codigo <code>
+	if(34>29){
+		printf("joguei e ganhei");
+	}</code> 
+	não esta como eu deixei mas com a tag pre fica 
+	<pre>
+	<code>
+	if(34>29){
+		printf("joguei e ganhei");
+	}
+	</code></pre> 
+	</p>
+
+<hr>
+
+<p> para citações simples utilizamos a tag q, então <q>como diria um pai de um amigo: como vai</q>
+<br><q>by the answer for your prays</q>
+<br><q>but i got a secret baby</q>
+<br><q>follow me</q>
+</p>
+
+<br> para citações completas usa a tag blockquote e fica <blockquote cite="https://www.youtube.com/watch?v=_zWWD1MFybc"> ola amigos, como estão tranquilos?</blockquote> <br>ela joga tudo para um lugar </p>
+<blockquote> have you ever find out look to get enough</blockquote>
+<blockquote cite="https://www.youtube.com/watch?v=2dpKQDqSzus&list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA&index=12">tik tik tik tik toc tiktiktik tok from love I'll back it  up</blockquote>
+
+<hr>
+
+<p>para abreviar tag abbr te mostra <abbr title="fds">foda-se</abbr> e <abbr title="vgbd">vagabunda</abbr>
+<br> <abbr title="td mnd te esprnd">todo mundo te esperando</abbr>
+<br> <abbr title="é dar uma detchada">é da uma deitada</abbr> 
+</p> 
+
+<hr>
+
+<p>para inverter o texto a tag bdo com paramentro dir="ltr ou rtl", assim <br> <bdo dir="rtl"> hoje fui correr um pouco</bdo>
+<br><bdo dir="rtl">even 9 1 1 now you craash the layer</bdo></p>
+
+<hr>
+
+<p>para fazer uma lista ordenada a tag ol cria a lista e a tag li é um item dela<br>
+escolher da onde comerçar paramentro start e o num, e o tipo de lista com paramentro type="1 ou A ou a ou I ou i" <br>
+<ol type="A" start="3">
+
+	<li>Acordar
+	<li>café
+	<li>dentes</li>
+	
+</ol>
+
+para listas não ordenadas a tag ul e li te mostram e parametro type com square, disc e circle.
+
+<ul type="square">
+<li>peidar
+<li>correr
+</ul>
+
+<br>listas mistas, MINHAS LISTAS FAVORITAS, misture as tag ol dentro de uma ol ou ul.
+
+<ol>
+	<li>antigas
+		<ol type="I">
+			<li>clipper
+			<li>visual basic
+		</ol>
+	</li>
+	<li>novas
+		<ol type="i">
+			<li>php
+			<li>java script
+		</ol>
+	</li>
+	<li><strong>nomes</strong>
+		<ul>
+			<li>mario
+			<li>armario
+		</ul>
+	</li>
+</ol>
+
+para listas de definições a tag dl para a lista a tag dt está a palvra chave e a tag dd o significado,veja
+
+<dl>
+<dt>HTML</dt>
+<dd>linguagem de marcação para a criação de um site</dd>
+<dt>CSS</dt>
+<dd>linguagem de marcação para a criação de desing de um site</dd>
+</dl>
+	
+</p>
+
+<hr>
+<h2>CRIANDO LINKS EXTERNOS</h2>
+<p>PARA criar hyperlinks a tag a com parametro target="_blank" com rel="external"<br>
+<br>Você pode acessar meu outro site aqui:
+<a href="noticias/testando.html" target="_blank" rel="external">Site não completo</a>.
+<br>acesse também o nosso canal no youtube:(esse está sem os parametros)<a href="https://www.youtube.com/watch?v=MsXT8Rdgd10&list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA&index=21">Canal JKPLAYER</a>.</p>
+
+<h2>links internos</h2><p>está é primeira página do site. Se você quiser, pode acessar a minha <a href="../segundo/css/css.html"  rel="next">segunda pagina(rel next)</a></br>
+para <a href="new 1.html" rel="prev">voltar para a pagina anterior (rel prev)</a> e<br>
+agora utilizando o paramentro nofollow na tag rel="nofollow" <a href="https://www.youtube.com/watch?v=MsXT8Rdgd10&list=RDGMEMQ1dJ7wXfLlqCjwV0xfSNbA&index=21" target="_blank" rel="nofollow">Canal no youtube</a>
+
+<br>terceira pagina com target="_self" e utilizando uma html de outra pasta:<a href="../segundo/css/css.html" target="_blank" rel="next" >testando2</a> 
+
+<h2>links de download</h2>
+ <br>aqui você tem a tag a atributo href, type para dizer que tipo de extensao é o arquivo,atributo download="nomedoarquivo"
+<ul>
+	<li><a href="Downloads/3DPLog.txt" download="3DPLog.txt" type="application/txt">Baixe o arquivo</a>
+</ul>
+Com o atributo target: temos <br>
+<ul>
+	<li>_blank: vai abrir um link numa nova janela em branco
+	<li>_self: vai abrir o link ou frame na janela atual
+	<li>_top: vai desfazer todos frames e abrir o destino no navegador completo
+	<li>_parent: similar ao top em uma referência à janela mãe.
+	<li>nome?
+</ul><br>	
+Com o atributo rel: temos <br>
+<ul>
+	<li>next:indica que o link é a proxima parte do doc atual
+	<li>prev:indica que o link é a parte anterior do doc atual.
+	<li>author:indica que o link para o site do autor do artigo atual.
+	<li>external:indica que é um link para outro site que não faz parte do site atual.
+	<li>nofollow:indica que é um link para um site não endossado, como um link pago.
+</ul>	
+</p>
+
+
+<hr>
+
+<h2>imagem dinamica</h2><br>
+tente abrir esse site em vários dispositivos ou diminua o tmanho da janela do navegador. A tag picture com a tag source parametro media=("min/max-width=100px") esse vai definir ate onde a janela vai transicionar para a proxima imagem, scrset="caminho" e type="image/png" o type diz que tipo de arquivo é, veja</p>
+<picture>
+	<source media="(max-width: 500px)" srcset="imagem/celular.png" type="image/png">
+	<source media="(max-width: 1000px)" srcset="imagem/tablet.png" type="image/png">
+	<img src="imagem/pc.png" alt="imagem grande.png" >
+</picture>
+
+
+<hr>
+
+<h2>MÍDIAS HTML</h2>
+<p>VAMOS aprender a reproduzir áudios, com a tag audio parametros type e media. mp3, wav e ogg</p>	
+	<audio src="midia/musica.mp3" controls autoplay>música</audio>
+<p>alguns navegadores podem não aceitar alguns formato de musica então podemos usar a tag source para variar nos formatos de audio. mp3, eav, ogg.</p>
+<p>atributo <mark>controls</mark> te mostra os controles de midia e <mark>autoplay</mark> e <mark>loop</mark> repetira a midia.</p>
+<p>com alguns parametro como:</p>
+
+<ul>
+	<li>preload="metadata", que carrega so as informações do arquivo.
+	<li>preload="none", carrega absolutamente nada ate que o usuario clique no botão play ou um script inicie a reprodução
+	<li>preload="auto", a página só terminara de carregar quando carregar a media completa.
+</ul>
+
+<audio preload="metadata">
+	<source src="midia/musica.mp3" type="audio/mp3">
+	<source src="midia/musica.ogg" type="audio/ogg">
+	<source src="midia/musica.wav" type="audio/wav">
+	<p>infelizmente não suporta, <a href="midia/musica.mp3" download="musica.mp3" type="audio/mp3">klo</a></p>
+</audio>
+
+<h2>Formato de vídeo</h2>
+<p>inserindo vídeos hospedados localmente, use tag video width= poster="nomedoarquivoparathumb.png" e controls autoplay</p>
+ <video width="500" poster="download.png" controls autoplay>
+<source src="video/v.mp4" type="video/mp4">
+<source src="video/v.m4v" type="video/mp4">
+<source src="video/v.webm" type="video/webm">
+<source src="video/v.ogv" type="video/ogg">
+</video>
+
+<p>incorporar o vídeo externo, ou Você copia o codigo do youtube ou use a tag iframe width="" height="" scr="link" title="nome"</p>
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/WkpaTQPoGa4" title="YouTube
+ video player" frameborder="0" allow="accelerometer; 
+ autoplay; clipboard-write; encrypted-media; gyroscope;
+ picture-in-picture; web-share" allowfullscreen></iframe>
+<hr>
+
+<p>
+
+			 
+	</body>
+</html>
+	
